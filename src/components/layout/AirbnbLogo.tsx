@@ -1,0 +1,16 @@
+export function AirbnbLogo() {
+  return (
+    <div className="flex shrink-0 items-center gap-1.5 text-primary" role="img" aria-label="Airbnb">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 32 32"
+        className="h-8 w-8 fill-none stroke-current"
+        strokeWidth="2.2"
+      >
+        <path d="M16 3c-3 0-4.8 5.4-7.1 10.2C6.8 17.7 4.7 22 7.8 24.7c2.7 2.3 5.7.1 8.2-2.6 2.5 2.7 5.5 4.9 8.2 2.6 3.1-2.7 1-7-1.1-11.5C20.8 8.4 19 3 16 3Z" />
+        <path d="M12.2 18.1c0-2.2 1.7-4 3.8-4s3.8 1.8 3.8 4c0 1.3-1.5 3-3.8 5.3-2.3-2.3-3.8-4-3.8-5.3Z" />
+      </svg>
+      <span className="hidden text-xl font-bold tracking-tight md:block">airbnb</span>
+    </div>
+  );
+}
