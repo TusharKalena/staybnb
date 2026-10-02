@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+
+# Next.js build output
+.next
+out
+build
+next-env.d.ts
+
+# TypeScript
+*.tsbuildinfo
+
+# Env files and local database
+.env
+.env*.local
+!.env.example
+*.db
+*.db-journal
+
+# Logs
+*.log
+
+# Editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
