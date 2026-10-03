@@ -1,5 +1,6 @@
 import { AirbnbLogo } from "./AirbnbLogo";
 import { Container } from "./Container";
+import { LanguageMenu } from "./LanguageMenu";
 import { ProfileMenu } from "./ProfileMenu";
 import { SearchBar } from "./SearchBar";
 
@@ -15,8 +16,9 @@ export function Header() {
             aria-disabled="true"
             className="hidden h-10 cursor-pointer rounded-full px-3 text-sm font-semibold transition-colors duration-200 hover:bg-muted lg:block"
           >
-            Airbnb your home
+            Become a host
           </button>
+          <LanguageMenu />
           <ProfileMenu />
         </div>
       </Container>

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { BookingCard } from "@/components/booking/BookingCard";
 import { MobileBookingBar } from "@/components/booking/MobileBookingBar";
 import { Container } from "@/components/layout/Container";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { Toast, TOAST_VISIBLE_MS } from "@/components/ui/toast";
 import { Amenities } from "@/components/listing/Amenities";
 import { Description } from "@/components/listing/Description";
 import { Highlights } from "@/components/listing/Highlights";
@@ -30,9 +31,20 @@ const MAIN_ID = "main";
 
 export function ListingPage() {
   const [saved, setSaved] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const booking = useBooking({ ...listing, initialRange: defaultStay });
-  const toggleSave = () => setSaved((value) => !value);
+  const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => () => clearTimeout(toastTimer.current), []);
+
+  const toggleSave = () => {
+    const next = !saved;
+    setSaved(next);
+    setToast(next ? "Added to wishlist" : "Removed from wishlist");
+    clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(null), TOAST_VISIBLE_MS);
+  };
 
   return (
     <>
@@ -101,6 +113,7 @@ export function ListingPage() {
         saved={saved}
         onToggleSave={toggleSave}
       />
+      <Toast message={toast} />
     </>
   );
 }

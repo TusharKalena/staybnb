@@ -51,7 +51,7 @@ import type { Listing, Photo } from "@/types/listing";
 
 const bathroom = "/images/bathroom.jpg";
 const bedroom = "/images/bedroom.jpg";
-const host = "/images/host.jpg";
+const host = "/images/host.jpeg";
 const house = "/images/house.jpg";
 const kitchen = "/images/kitchen.jpg";
 const livingRoom = "/images/living-room.jpg";

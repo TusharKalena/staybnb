@@ -72,7 +72,7 @@ export function PhotoLightbox({
               aria-label="Save to wishlist"
               className={headerButton}
             >
-              <Heart aria-hidden="true" className={cn("size-4", saved && "fill-current")} />
+              <Heart aria-hidden="true" className={`size-5 ${saved ? "fill-white" : ""}`} />
               {saved ? "Saved" : "Save"}
             </button>
           </div>

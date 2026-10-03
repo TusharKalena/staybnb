@@ -110,7 +110,7 @@ export function Reviews({
         ))}
       </div>
 
-      <ul className="mt-10 flex gap-3 overflow-x-auto pb-2">
+      <ul className="mt-10 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {reviewTopics.map(({ icon: Icon, label, count }) => (
           <li
             key={label}
@@ -139,3 +139,4 @@ export function Reviews({
     </Section>
   );
 }
+
